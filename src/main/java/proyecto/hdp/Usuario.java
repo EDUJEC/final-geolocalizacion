@@ -6,14 +6,16 @@
 package proyecto.hdp;
 
 import java.util.ArrayList;
+import org.springframework.data.annotation.Id;
 
 /**
  *
  * @author JOSEEDUARDO
  */
 public class Usuario {
-    
+    @Id
     private String id;
+    
     private String nickname;
     private String email;
     private String pasword;
@@ -21,6 +23,18 @@ public class Usuario {
     private Posicion posicion;
 
     public Usuario() {
+    }
+
+    public Usuario(String id) {
+        this.id = id;
+    }
+
+    public Usuario(String nickname, String email, String pasword, ArrayList<Mensaje> mensaje, Posicion posicion) {
+        this.nickname = nickname;
+        this.email = email;
+        this.pasword = pasword;
+        this.mensaje = mensaje;
+        this.posicion = posicion;
     }
 
     public Usuario(String id, String nickname, String email, String pasword, ArrayList<Mensaje> mensaje, Posicion posicion) {
